@@ -17,6 +17,6 @@ use Illuminate\Http\Client\Response;
 
 Route::group(['middleware' => ['localization']], function () {
     Route::get('/status', function(){
-        return response()->json('everything seems in place!', 200);
+        return response()->json(__('locale.status_good'), 200);
     });
 });
