@@ -7,12 +7,14 @@ use Throwable;
 use Illuminate\Http\Response;
 use App\Helpers\ResponseObject;
 use Illuminate\Support\Facades\App;
-use Symfony\Component\HttpFoundation\Exception\BadRequestException;
 use Illuminate\Database\Eloquent\ModelNotFoundException;
 use Illuminate\Auth\Access\AuthorizationException;
 use Illuminate\Validation\ValidationException;
 use Symfony\Component\HttpKernel\Exception\HttpException;
 use Illuminate\Http\Client\RequestException;
+use App\Exceptions\CustomException;
+use App\Exceptions\BadRequestException;
+
 
 class Handler extends ExceptionHandler
 {
