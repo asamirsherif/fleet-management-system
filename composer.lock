@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "8d1ea1717f277fccfd36b8421895b42a",
+    "content-hash": "511b9f092e1263ab9647bf6668dd7c09",
     "packages": [
         {
             "name": "brick/math",
@@ -3123,6 +3123,69 @@
                 }
             ],
             "time": "2023-02-18T22:44:06+00:00"
+        },
+        {
+            "name": "orchid/crud",
+            "version": "4.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/orchidsoftware/crud.git",
+                "reference": "d734db26493373f18b898f9f278fe366a7fd2a35"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/orchidsoftware/crud/zipball/d734db26493373f18b898f9f278fe366a7fd2a35",
+                "reference": "d734db26493373f18b898f9f278fe366a7fd2a35",
+                "shasum": ""
+            },
+            "require": {
+                "orchid/platform": "^14.0"
+            },
+            "require-dev": {
+                "orchestra/testbench": "^8.0",
+                "phpunit/phpunit": "^10.0"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Orchid\\Crud\\CrudServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Orchid\\Crud\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Alexandr Chernyaev",
+                    "email": "bliz48rus@gmail.com",
+                    "role": "Developer"
+                }
+            ],
+            "description": "Build CRUD apps in fewer lines of code for Laravel Orchid.",
+            "homepage": "https://github.com/orchid/crud",
+            "keywords": [
+                "crud",
+                "orchid"
+            ],
+            "support": {
+                "issues": "https://github.com/orchidsoftware/crud/issues",
+                "source": "https://github.com/orchidsoftware/crud/tree/4.0.0"
+            },
+            "funding": [
+                {
+                    "url": "https://opencollective.com/orchid",
+                    "type": "open_collective"
+                }
+            ],
+            "time": "2023-05-27T23:51:00+00:00"
         },
         {
             "name": "orchid/platform",
@@ -7156,6 +7219,68 @@
                 }
             ],
             "time": "2023-04-12T12:00:00+00:00"
+        },
+        {
+            "name": "getsolaris/laravel-make-service",
+            "version": "v1.1.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/getsolaris/laravel-make-service.git",
+                "reference": "80e6d6e050e2e526903d05613adf34a30ae27e99"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/getsolaris/laravel-make-service/zipball/80e6d6e050e2e526903d05613adf34a30ae27e99",
+                "reference": "80e6d6e050e2e526903d05613adf34a30ae27e99",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/console": "~5.6.34|~5.7.0|~5.8.0|^6.0|^7.0|^8.0|^9.0|^10.0",
+                "illuminate/support": "~5.6.34|~5.7.0|~5.8.0|^6.0|^7.0|^8.0|^9.0|^10.0",
+                "php": "^7.1|^8.0"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "^9.5|^10.0"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Getsolaris\\LaravelMakeService\\LaravelMakeServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Getsolaris\\LaravelMakeService\\": "src/"
+                },
+                "classmap": [
+                    "src/"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "getsolaris",
+                    "email": "getsolaris.kr@gmail.com"
+                }
+            ],
+            "description": "A MVCS pattern create a service command for Laravel 5+",
+            "keywords": [
+                "contract",
+                "laravel",
+                "mvcs",
+                "pattern",
+                "service"
+            ],
+            "support": {
+                "issues": "https://github.com/getsolaris/laravel-make-service/issues",
+                "source": "https://github.com/getsolaris/laravel-make-service/tree/v1.1.1"
+            },
+            "time": "2023-03-08T02:19:32+00:00"
         },
         {
             "name": "hamcrest/hamcrest-php",

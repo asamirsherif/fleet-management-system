@@ -39,29 +39,10 @@ class PlatformProvider extends OrchidServiceProvider
                 ->title('Navigation')
                 ->route(config('platform.index')),
 
-            Menu::make('Example Screen')
-                ->icon('bs.collection')
-                ->route('platform.example')
-                ->badge(fn () => 6),
 
-            Menu::make('Form Elements')
-                ->icon('bs.journal')
-                ->route('platform.example.fields')
-                ->active('*/form/examples/*'),
+            Menu::make(__('Stations'))->route('platform.resource.list', ["resource" => "station-resources"]),
+            Menu::make(__('Vehicles'))->route('platform.resource.list', ["resource" => "vehicle-resources"]),
 
-            Menu::make('Overview Layouts')
-                ->icon('bs.columns-gap')
-                ->route('platform.example.layouts')
-                ->active('*/layout/examples/*'),
-
-            Menu::make('Charts')
-                ->icon('bs.bar-chart')
-                ->route('platform.example.charts'),
-
-            Menu::make('Cards')
-                ->icon('bs.card-text')
-                ->route('platform.example.cards')
-                ->divider(),
 
             Menu::make(__('Users'))
                 ->icon('bs.people')

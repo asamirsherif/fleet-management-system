@@ -17,6 +17,27 @@ use Illuminate\Http\Client\Response;
 
 Route::group(['middleware' => ['localization']], function () {
     Route::get('/status', function(){
-        return response()->json('everything seems in place!', 200);
+        return response()->json(__('locale.status_good'), 200);
     });
+
+        /**
+     * Auth
+     */
+    Route::group(['prefix' => 'auth', 'namespace' => 'Auth'], function () {
+        Route::get('user', 'AuthController@swaggerStartPoint');
+        Route::post('login', 'AuthController@login');
+        Route::post('signup', 'AuthController@signup');
+        Route::post('activate', 'AuthController@activateUser');
+        Route::post('deactivate', 'AuthController@deActivateUser');
+        Route::post('forget-password', 'AuthController@forgetPassword');
+        Route::get('reset-password-email', 'AuthController@resetPasswordEmail');
+        Route::post('reset-password', 'AuthController@resetPassword');
+        Route::post('change-password', 'AuthController@changePassword');
+        Route::put('user', 'AuthController@update');
+        Route::delete('user/delete', 'AuthController@delete');
+        Route::get('profile', 'AuthController@getProfile');
+        Route::post('logout', 'AuthController@logout');
+        Route::get('list-user-statuses', 'AuthController@listUserStatuses');
+    });
+
 });

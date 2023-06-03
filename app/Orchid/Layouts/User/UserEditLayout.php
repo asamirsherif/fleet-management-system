@@ -30,6 +30,24 @@ class UserEditLayout extends Rows
                 ->required()
                 ->title(__('Email'))
                 ->placeholder(__('Email')),
+
+            Input::make('user.first_name')
+                ->type('first_name')
+                ->required()
+                ->title(__('First Name'))
+                ->placeholder(__('First Name')),
+
+            Input::make('user.last_name')
+                ->type('last_name')
+                ->required()
+                ->title(__('Last Name'))
+                ->placeholder(__('Last Name')),
+
+            Input::make('user.phone_number')
+                ->type('phone_number')
+                ->required()
+                ->title(__('Phone Number'))
+                ->placeholder(__('Phone Number')),
         ];
     }
 }
