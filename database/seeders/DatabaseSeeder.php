@@ -3,9 +3,6 @@
 namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
-use Database\Seeders\CountrySeeder;
-use Database\Seeders\StatesSeeder;
-use Database\Seeders\CitySeeder;
 
 class DatabaseSeeder extends Seeder
 {
@@ -21,5 +18,6 @@ class DatabaseSeeder extends Seeder
         $this->call([AdminSeeder::class]);
 
         $this->call([StationSeeder::class]);
+        $this->call([VehicleSeeder::class]);
     }
 }

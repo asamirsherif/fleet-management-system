@@ -41,6 +41,8 @@ class PlatformProvider extends OrchidServiceProvider
 
 
             Menu::make(__('Stations'))->route('platform.resource.list', ["resource" => "station-resources"]),
+            Menu::make(__('Vehicles'))->route('platform.resource.list', ["resource" => "vehicle-resources"]),
+
 
             Menu::make(__('Users'))
                 ->icon('bs.people')

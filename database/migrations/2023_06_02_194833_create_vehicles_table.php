@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id();
             $table->enum('type', ['Bus', 'Mini Bus', 'Microbus', 'Car', 'Van']);
             $table->integer('seat_count');
-            $table->string('license_plate')->nullable();
+            $table->string('license_plate')->unique();
             $table->timestamps();
         });
     }
