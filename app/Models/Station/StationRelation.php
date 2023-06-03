@@ -8,12 +8,12 @@ trait StationRelation {
 
     public function parent()
     {
-        return $this->belongsTo(Station::class, 'parent_id');
+        return $this->belongsTo(Station::class, 'station_parent_id');
     }
 
     public function children()
     {
-        return $this->hasMany(Station::class, 'parent_id');
+        return $this->hasMany(Station::class, 'station_parent_id');
     }
 
     public function subStations()
