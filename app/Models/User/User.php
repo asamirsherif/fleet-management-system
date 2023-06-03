@@ -1,14 +1,21 @@
 <?php
 
-namespace App\Models;
+namespace App\Models\User;
 
 use Orchid\Filters\Types\Like;
 use Orchid\Filters\Types\Where;
 use Orchid\Filters\Types\WhereDateStartEnd;
 use Orchid\Platform\Models\User as Authenticatable;
+use Laravel\Passport\HasApiTokens;
+use App\Models\User\UserScope;
+use App\Models\Traits\CommonRelation;
 
 class User extends Authenticatable
 {
+    use HasApiTokens;
+    use UserScope;
+    use CommonRelation;
+
     /**
      * The attributes that are mass assignable.
      *
@@ -16,7 +23,11 @@ class User extends Authenticatable
      */
     protected $fillable = [
         'name',
+        'username',
+        'first_name',
+        'last_name',
         'email',
+        'phone_number',
         'password',
         'permissions',
     ];
