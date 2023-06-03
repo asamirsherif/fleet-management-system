@@ -15,8 +15,8 @@ return new class extends Migration
             $table->id();
             $table->foreignId('parent_station_id')->nullable()->constrained('stations')->cascadeOnDelete();
             $table->string('name');
-            $table->decimal('latitude', 10, 7)->nullable();
-            $table->decimal('longitude', 10, 7)->nullable();
+            $table->decimal('latitude',10,8)->nullable();
+            $table->decimal('longitude',10,8)->nullable();
             $table->string('address')->nullable();
             $table->timestamps();
         });

@@ -54,7 +54,10 @@ class StationResource extends Resource
             TD::make('place','Location')
             ->render(function ($model){
                 return '<a  style="color:blue;"
-                            href="https://maps.google.com/?q='. $model->longitude . ',' . $model->latitude . '"> '. $model->longitude . ',' . $model->latitude.'</a> ';
+                            target="_blank"
+                            href="https://maps.google.com/?q='. $model->latitude . ',' . $model->longitude . '"> '.
+                             $model->latitude . ',' . $model->longitude.
+                             '</a> ';
             }),
 
             TD::make('station_parent_id', __('Parent Station'))
@@ -111,6 +114,14 @@ class StationResource extends Resource
                     return $model->parent?->name ?? 'None';
                 }),
 
+            Sight::make(__("Location"))
+            ->render(function ($model){
+                return '<a  style="color:blue;"
+                            href="https://maps.google.com/?q='. $model->latitude . ',' . $model->longitude . '"> '.
+                            $model->latitude . ',' . $model->longitude.
+                            '</a> ';
+            }),
+
         ];
     }
 
@@ -148,6 +159,19 @@ class StationResource extends Resource
         } else {
             $this->stationService->createStation($request->toArray());
         }
+    }
+
+    /**
+     * Get the validation rules that apply to save/update.
+     *
+     * @return array
+     */
+    public function rules(Model $model) : array
+    {
+        return [
+            'place.longitude' => ['required','regex:/^[-]?((((1[0-7][0-9])|([0-9]?[0-9]))\.(\d+))|180(\.0+)?)$/'],
+            'place.latitude' => ['required','regex:/^[-]?(([0-8]?[0-9])\.(\d+))|(90(\.0+)?)$/']
+        ];
     }
 
     /**
@@ -191,4 +215,6 @@ class StationResource extends Resource
     {
         Toast::info('Station deleted!');
     }
+
+
 }
