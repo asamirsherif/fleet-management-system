@@ -16,6 +16,7 @@ return new class extends Migration
             $table->foreignId('route_id')->constrained('routes')->cascadeOnDelete();
             $table->foreignId('start_station_id')->constrained('stations')->cascadeOnDelete();
             $table->foreignId('end_station_id')->constrained('stations')->cascadeOnDelete();
+            $table->integer('order');
             $table->double('price',5,3)->default(0);
             $table->timestamps();
         });
