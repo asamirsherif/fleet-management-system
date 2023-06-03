@@ -117,4 +117,54 @@ class Status extends Model
         }
     }
 
+    public function __toString()
+    {
+        return self::constToString($this->status, $this->object_type);
+    }
+
+    public static function constToString($const, $objectType = null)
+    {
+        switch ($const) {
+            case self::ACTIVE:
+                switch ($objectType) {
+                    default:
+                        return 'Active';
+                }
+            case self::AWAIT_ACTIVATION:
+                switch ($objectType) {
+                    default:
+                        return 'Waiting Activation';
+                }
+            case self::DEACTIVATED:
+                switch ($objectType) {
+                    default:
+                        return 'Deactivated';
+                }
+            case self::LOCKED:
+                switch ($objectType) {
+                    default:
+                        return 'Locked';
+                }
+            case self::AVAILABLE:
+                switch ($objectType) {
+                    case Seat::class:
+                        return 'Available';
+                    default:
+                        return 'Available';
+                }
+            case self::DISABLED:
+                switch ($objectType) {
+                    default:
+                        return 'Disabled';
+                }
+            case self::BOOKED:
+                switch ($objectType) {
+                    default:
+                        return 'Booked';
+                }
+            default:
+                throw new CustomException("Can't assume status string value.", Response::HTTP_INTERNAL_SERVER_ERROR);
+        }
+    }
+
 }
