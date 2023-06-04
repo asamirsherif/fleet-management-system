@@ -9,7 +9,7 @@ trait RouteStationRelation {
 
     public function route()
     {
-        return $this->belongsTo(Route::class);
+        return $this->belongsToMany(Route::class, 'routes');
     }
 
     public function station()

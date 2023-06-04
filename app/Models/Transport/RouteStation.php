@@ -6,7 +6,8 @@ use Illuminate\Database\Eloquent\Model;
 
 class RouteStation extends Model
 {
-    use RouteRelation;
-    protected $fillable = ['route_id', 'station_id','order','price'];
+    use RouteStationRelation;
+
+    protected $fillable = ['route_id', 'start_station_id', 'end_station_id', 'order', 'price'];
 
 }
