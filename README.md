@@ -10,7 +10,7 @@ The project is a Laravel-based application built on Laravel 10. It includes vari
    
     email: admin@admin.com
     password: password
-   ```
+   ````
 
 ## Installation
 
