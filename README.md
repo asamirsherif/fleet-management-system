@@ -12,6 +12,12 @@ The project is a Laravel-based application built on Laravel 10. It includes vari
     password: password
    ````
 
+## API Collection ( Postman )
+
+   ````
+   https://documenter.getpostman.com/view/25680564/2s93sXbZtw
+   ````
+    
 ## Installation
 
 To install and run the application, follow these steps:
@@ -56,7 +62,7 @@ To install and run the application, follow these steps:
    php artisan migrate
    ```
 
-9. (Optional) Seed the database with sample data:
+9. Seed the database with sample data (Required first time)
 
    ````
    php artisan db:seed
