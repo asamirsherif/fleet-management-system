@@ -3,6 +3,13 @@
 
 The project is a Laravel-based application built on Laravel 10. It includes various entities like stations, routes, vehicles, seats, bookings, trips and subroutes. The application follows best practices and utilizes Laravel's features such as Eloquent ORM, migrations, seeders, API versioning, caching, and recursive algorithms to efficiently manage and manipulate data. Additionally, the project includes a dashboard for easy administration and monitoring of the application's entities and their respective data.
 
+# Notes
+
+- The seeder files provide the necessary dummy data for the application.
+- The application includes a complete dashboard that is fully functional.
+- A Postman collection is provided for testing the application's API endpoints.
+
+
 ## Admin Panel
 
    ````
