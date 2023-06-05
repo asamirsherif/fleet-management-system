@@ -2,6 +2,7 @@
 
 namespace App\Services\Booking;
 
+use App\Exceptions\CustomException;
 use App\Models\Booking\Booking;
 use App\Models\Polymorphic\Status;
 use App\Models\Trip\TripStation;
@@ -9,6 +10,7 @@ use App\Models\Trip\TripUser;
 use Illuminate\Database\Eloquent\Collection;
 use App\Models\Vehicle\Vehicle;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Http\Response;
 
 /**
  * Class BookingService
@@ -66,6 +68,8 @@ class BookingService
 
     public function bookSeat(Vehicle $vehicle, TripStation $tripStation, $userId){
         $availableSeat = $vehicle->seats()->isAvailable()->first();
+
+        if(!$availableSeat) throw new CustomException('Sorry, all seats has been booked in this vehicle!',Response::HTTP_BAD_REQUEST);
 
         $tripUser = TripUser::create([
             'user_id' => $userId,
