@@ -15,6 +15,7 @@ return new class extends Migration
             $table->id();
             $table->foreignId('user_id')->constrained('users')->cascadeOnDelete();
             $table->foreignId('trip_station_id');
+            $table->foreignId('trip_user_id');
             $table->timestamps();
         });
     }

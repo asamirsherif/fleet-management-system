@@ -39,6 +39,7 @@ class BookingController extends ApiController
         $user = Auth::user();
         $request->merge(['user_id' => $user->id]);
         $booking = $this->bookingService->createBooking($request);
-        return $this->handleResponse(BookingResource::collection($booking));
+        return $this->handleResponse(new BookingResource($booking));
     }
+
 }

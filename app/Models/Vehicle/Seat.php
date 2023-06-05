@@ -25,8 +25,10 @@ class Seat extends Model
         return Str::ulid()->toBase32();
     }
 
-    public function isAvailable(){
-        return $this->status->status = Status::AVAILABLE;
+    public function ScopeIsAvailable($query){
+        return $query->whereHas('status',function($q){
+            $q->where('status',Status::AVAILABLE);
+        });
     }
 
 }
