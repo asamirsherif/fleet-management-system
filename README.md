@@ -62,10 +62,16 @@ To install and run the application, follow these steps:
    php artisan migrate
    ```
 
-9. Seed the database with sample data (Required first time)
+
+9. Seed the database with sample data:
 
    ````
    php artisan db:seed
+   ```
+10. Install Passport Pacakge
+
+   ````
+   php artisan passport:install
    ```
 
 ## Running the Application
