@@ -13,7 +13,7 @@ trait RouteRelation {
 
     public function routeStation()
     {
-        return $this->hasMany(RouteStation::class);
+        return $this->hasMany(RouteStation::class)->orderBy('order');
     }
 
 }

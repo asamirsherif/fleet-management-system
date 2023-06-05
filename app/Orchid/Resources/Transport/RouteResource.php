@@ -64,6 +64,7 @@ class RouteResource extends Resource
                     'ID',
                     'Start Station',
                     'End Station',
+                    'duration',
                     'Price',
                 ])
                 ->fields([
@@ -79,6 +80,12 @@ class RouteResource extends Resource
                         ->fromModel(Station::class, "name", "id")
                         ->chunk(25)
                         ->required(),
+
+                    "duration" => Input::make('duration')
+                        ->name('duration')
+                        ->mask([
+                            "alias" => "numeric"
+                        ]),
 
                     "Price" => Input::make('price')
                         ->name('Price')

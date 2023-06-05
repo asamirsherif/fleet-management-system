@@ -28,7 +28,9 @@ class RouteStationService
                 "ID"              => $station->id,
                 "Start Station"   => $station->start_station_id,
                 "End Station"     => $station->end_station_id,
+                "duration"        => $station->duration,
                 "Price"           => $station->price
+
             ];
         }
 

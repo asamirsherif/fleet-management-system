@@ -2,8 +2,14 @@
 
 namespace App\Services\Transport;
 
+use App\Exceptions\CustomException;
 use App\Models\Transport\Route;
+use App\Models\Transport\RouteStation;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Http\Response;
+use Illuminate\Support\Collection;
+use SplPriorityQueue;
+use App\Models\Station\Station;
 
 class RouteService
 {
@@ -31,4 +37,23 @@ class RouteService
     {
         return Route::all()->toArray();
     }
+
+    public function getAvailableSubroutes($startStationId, $endStationId) : array
+    {
+        $subRoutes = Route::getAllSubRoutes();
+
+        foreach($subRoutes as $subRoute){
+            foreach($subRoute as $sub){
+                if($startStationId == $sub['start_station_id'] && $endStationId == $sub['end_station_id']){
+                    $availableRoutes[] = $sub;
+                }
+            }
+        }
+
+        return $availableRoutes ?? [];
+
+    }
 }
+
+
+
