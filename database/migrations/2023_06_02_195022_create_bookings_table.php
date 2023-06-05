@@ -16,6 +16,9 @@ return new class extends Migration
             $table->foreignId('user_id')->constrained('users')->cascadeOnDelete();
             $table->string('seat_id');
             $table->foreign('seat_id')->references('ulid')->on('seats')->onDelete('cascade');
+            $table->foreignId('start_station_id')->constrained('stations')->cascadeOnDelete();
+            $table->foreignId('end_station_id')->constrained('stations')->cascadeOnDelete();
+            $table->float('price');
             $table->timestamps();
         });
     }
