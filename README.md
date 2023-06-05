@@ -33,31 +33,31 @@ To install and run the application, follow these steps:
 
    ````
    git clone https://github.com/asamirsherif/fleet-management-system
-   ```
+   ````
 
 2. Navigate to the project directory:
 
    ````
    cd laravel-10-project
-   ```
+   ````
 
 3. Install the project dependencies using Composer:
 
    ````
    composer install
-   ```
+   ````
 
 4. Copy the `.env.example` file to a new `.env` file:
 
    ````
    cp .env.example .env
-   ```
+   ````
 
 5. Generate a new application key:
 
    ````
    php artisan key:generate
-   ```
+   ````
 
 6. Create a new database for the application.
 
@@ -67,27 +67,27 @@ To install and run the application, follow these steps:
 
    ````
    php artisan migrate
-   ```
+   ````
 
 
 9. Seed the database with sample data:
 
    ````
    php artisan db:seed
-   ```
+   ````
 10. Install Passport Pacakge
 
    ````
    php artisan passport:install
-   ```
+   ````
 
 ## Running the Application
 
 To run the application, use the following command:
 
-```
+````
 php artisan serve
-```
+````
 
 This will start a development server at `http://localhost:8000`. You can now open your web browser and navigate to that URL to view the application.
 
