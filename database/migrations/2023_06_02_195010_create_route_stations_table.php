@@ -17,7 +17,8 @@ return new class extends Migration
             $table->foreignId('start_station_id')->constrained('stations')->cascadeOnDelete();
             $table->foreignId('end_station_id')->constrained('stations')->cascadeOnDelete();
             $table->integer('order');
-            $table->double('price',5,3)->default(0);
+            $table->integer('duration'); // duration between two stations in minutes
+            $table->float('price')->default(0);
             $table->timestamps();
         });
     }

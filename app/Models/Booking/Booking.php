@@ -9,5 +9,5 @@ class Booking extends Model
     use BookingScope;
     use BookingRelation;
 
-    protected $fillable = ['user_id', 'seat_id'];
+    protected $fillable = ['user_id', 'trip_station_id'];
 }

@@ -5,6 +5,8 @@ namespace Database\Seeders;
 use Illuminate\Database\Seeder;
 use App\Models\Vehicle\Vehicle;
 use App\Models\Vehicle\Seat;
+use App\Models\Polymorphic\Status;
+use Carbon\Carbon;
 
 class VehicleSeeder extends Seeder
 {
@@ -53,9 +55,23 @@ class VehicleSeeder extends Seeder
                 for ($i = 1; $i <= $vehicleData['seat_count']; $i++) {
                     $seatName = $vehicle->type. '_' . $i;
 
-                    Seat::updateOrCreate([
+                    $seat = Seat::updateOrCreate([
                         'vehicle_id' => $vehicle->id,
                         'name' => $seatName,
+                    ]);
+
+                    Status::firstOrCreate([
+                        'object_type' => Seat::class,
+                        'object_id' => $seat->ulid,
+                        'status' => Status::AVAILABLE,
+                        'content' => [
+                            'history' => [
+                                [
+                                    'status' => Status::AVAILABLE,
+                                    'timestamp' => Carbon::now(),
+                                ],
+                            ],
+                        ],
                     ]);
                 }
             }

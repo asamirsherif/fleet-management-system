@@ -40,4 +40,10 @@ Route::group(['middleware' => ['localization']], function () {
         Route::get('list-user-statuses', 'AuthController@listUserStatuses');
     });
 
+    Route::group(['prefix' => 'booking', 'namespace' => 'Booking'], function () {
+        Route::get('all-stations', 'BookingController@getAvailableStations');
+        Route::post('trips', 'BookingController@getAvailableRoutes');
+        Route::post('book', 'BookingController@createBookingByUser');
+    });
+
 });
