@@ -1,8 +1,8 @@
 <?php
 
-namespace App\Models\Transport;
+namespace App\Models\Trip;
 
-use App\Models\Transport\Trip;
+use App\Models\Trip\Trip;
 use App\Models\Station\Station;
 
 trait TripStationRelation {

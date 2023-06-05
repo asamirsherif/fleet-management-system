@@ -42,7 +42,8 @@ Route::group(['middleware' => ['localization']], function () {
 
     Route::group(['prefix' => 'booking', 'namespace' => 'Booking'], function () {
         Route::get('all-stations', 'BookingController@getAvailableStations');
-        Route::post('available-stations', 'BookingController@getAvailableRoutes');
+        Route::post('trips', 'BookingController@getAvailableRoutes');
+        Route::post('book', 'BookingController@createBookingByUser');
     });
 
 });

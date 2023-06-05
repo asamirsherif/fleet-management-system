@@ -10,6 +10,9 @@ use App\Services\Transport\RouteService;
 use App\Http\Resources\Api\V1\Station\StationResource;
 use App\Http\Requests\V1\Booking\AvailableRouteRequest;
 use App\Http\Resources\Api\V1\Transport\SubRouteResource;
+use App\Http\Requests\Booking\BookTripRequest;
+use Illuminate\Support\Facades\Auth;
+use App\Http\Resources\Booking\BookingResource;
 
 class BookingController extends ApiController
 {
@@ -19,7 +22,7 @@ class BookingController extends ApiController
         private RouteService $routeService,
         private BookingService $bookingService
     ){
-
+        $this->middleware('auth:api')->only(['createBookingByUser']);
     }
 
     public function getAvailableRoutes(AvailableRouteRequest $request){
@@ -30,5 +33,12 @@ class BookingController extends ApiController
     public function getAvailableStations(){
         $stations = $this->stationService->getAllStations();
         return $this->handleResponse(StationResource::collection($stations));
+    }
+
+    public function createBookingByUser(BookTripRequest $request){
+        $user = Auth::user();
+        $request->merge(['user_id' => $user->id]);
+        $booking = $this->bookingService->createBooking($request);
+        return $this->handleResponse(BookingResource::collection($booking));
     }
 }

@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Models\Transport;
+namespace App\Models\Trip;
 
 use App\Models\Vehicle\Vehicle;
 use App\Models\Transport\Route;

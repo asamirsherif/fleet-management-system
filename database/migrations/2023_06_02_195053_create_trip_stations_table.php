@@ -14,10 +14,11 @@ return new class extends Migration
         Schema::create('trip_stations', function (Blueprint $table) {
             $table->id();
             $table->foreignId('trip_id')->constrained('trips')->cascadeOnDelete();
-            $table->string('seat_id');
-            $table->foreign('seat_id')->references('ulid')->on('seats')->onDelete('cascade');
-            $table->timestamp('arrival_time')->nullable();;
-            $table->timestamp('departure_time')->nullable();;
+            $table->foreignId('start_station_id')->constrained('stations')->cascadeOnDelete();
+            $table->foreignId('end_station_id')->constrained('stations')->cascadeOnDelete();
+            $table->timestamp('departure_time')->nullable();
+            $table->timestamp('arrival_time')->nullable();
+            $table->float('price');
             $table->timestamps();
         });
     }
