@@ -97,4 +97,4 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ## Acknowledgments
 
-This project was created as part of a tutorial on Laravel 10. Special thanks to the Laravel community for their excellent documentation and support.
+This project was created as part of a task on Laravel 10. Special thanks to the Laravel community for their excellent documentation and support.
